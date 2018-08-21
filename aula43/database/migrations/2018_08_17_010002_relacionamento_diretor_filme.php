@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Schema;  
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -16,8 +16,7 @@ class RelacionamentoDiretorFilme extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::table('movies', function (Blueprint $table) {
             $table->unsignedInteger('director_id');
-
-            $table ->foreign('director_id')->references('id')->on('directors');
+            $table->foreign('director_id')->references('id')->on('directors');
         });
         Schema::enableForeignKeyConstraints();
     }
@@ -30,8 +29,10 @@ class RelacionamentoDiretorFilme extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        $table->dropColumn('director_id');
+        Schema::table('movies', function (Blueprint $table) {
         $table->dropForeign(['director_id']);
+        $table->dropColumn('director_id');
+        });
         Schema::enableForeignKeyConstraints();
 
     }

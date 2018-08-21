@@ -14,23 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-   
 
 Route::get('/filmes', 'FilmeController@exibirFilmes');
 
-Route::get('/filmescomedia', 'FilmeController@filmescomedia');
+Route::get('/filme/add', 'FilmeController@exibirForm');
+Route::post('/filme/add', 'FilmeController@cadastrar');
+ 
+Route::get('/filme/edit/{id}', 'FilmeController@editForm');
+Route::post('/filme/edit/{id}', 'FilmeController@update');
 
-Route::get('/atorescomedia', 'FilmeController@atorescomedia');
+Route::get('/filme/delete/{id}', 'FilmeController@delete');
 
-Route::get('/genero/{id}', 'GeneroController@exibir');
-
-Route::get('/atores', 'AtorController@exibirAtores');
-
-
-
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
