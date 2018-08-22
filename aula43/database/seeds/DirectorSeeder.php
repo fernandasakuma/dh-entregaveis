@@ -20,7 +20,7 @@ class DirectorSeeder extends Seeder
         foreach ($directors as $director){
             //criamos 5 filmes para cada diretor
             factory(Filme::class, 5)->create([
-                'director_id' =>$director->id,
+                'director_id'=>$director->id,
             ]);
         }
     }

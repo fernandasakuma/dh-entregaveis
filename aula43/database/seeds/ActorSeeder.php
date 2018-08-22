@@ -14,10 +14,10 @@ class ActorSeeder extends Seeder
     public function run()
     {
         $actors = factory(Ator::class)->times(10)->create();
+        $movies = factory(Filme::class)->times(10)->create();
 
-        $movies=Filme::all();
         foreach($movies as $movie){
-            $movie->atores()->sync($actors->unique()->random(3));
+            $movie->atores()->sync($actors->random(3));
         }
     }
 }

@@ -15,16 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
    
+Route::middleware('auth')->group(function(){
+
+    Route::get('/filmescomedia', 'FilmeController@filmescomedia');
+
+});
 
 Route::get('/filmes', 'FilmeController@exibirFilmes');
-
-Route::get('/filmescomedia', 'FilmeController@filmescomedia');
 
 Route::get('/atorescomedia', 'FilmeController@atorescomedia');
 
 Route::get('/genero/{id}', 'GeneroController@exibir');
 
-Route::get('/atores', 'AtorController@exibirAtores');
+Route::get('/atores', 'AtorController@exibirAtores')->middleware(auth);
 
 
 
