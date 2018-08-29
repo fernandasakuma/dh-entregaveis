@@ -35,12 +35,14 @@
 
     console.log(resultado.join(''))
 
-    //exercicio 4 - não terminado
+    //exercicio 4
     let numerocasa = enigma.filter(function(value){
         return (typeof value === 'number')
     })
 
-    console.log(numerocasa.reduce(value,))
+    console.log(numerocasa.reduce(function(Acumulador, valorAtual) {
+    return Acumulador + valorAtual;
+    }))
 
 </script>
 </body>
