@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        aula5 js
+    </title>
+</head>
+<body>
+    <h1>Formulários</h1>
+<form id='formulario'>
+    <div>
+    <input type="text" name="nome" id="nome" placeholder="Nome" />
+    </div>
+
+    <div>
+    <input type="email" name="email" id="email" placeholder="Email" />
+    </div>
+    
+    <div>
+    Sexo:
+    <label>
+    <input type="radio" name="sexo" value='m' id='m'placeholder="sexo" /> Masculino
+    </label>
+    <label>
+    <input type="radio" name="sexo" value='f' id='f' placeholder="sexo" />Feminino
+    </label>
+    <label>
+     <input type="radio" name="sexo" value='a' id='a' placeholder="sexo" />Outro
+     </label>
+    </div>
+
+    <div>
+        <input type="password" name="senha" id="senha" placeholder="Senha" />
+    </div>
+    <div>
+        <input type="password" name="confirmarsenha" id="confirmarsenha" placeholder="Confirme a Senha" />
+    </div>
+
+    <div>
+     <input type="checkbox" name='noticias' id='noticias'> Quero de receber notícias sobre o site!
+    </div>
+
+    <button type="submit">Enviar</button>
+    <button type='button' id = 'limpar'>Limpar</button>
+    <button type='button' id = 'mostrardados' >Mostrar dados</button>
+</form>
+
+<p id = 'mensagem'></p>
+
+<script>
+    formulario.onsubmit = function (event) {
+        event.preventDefault()
+        
+        let msgFinal = ''
+
+        let nome = this['nome'].value
+        if(!nome){
+            msgFinal = msgFinal + 'Preencha o campo Nome<br>'
+        }
+
+        let email = this['email'].value
+        if(!email){
+            msgFinal = msgFinal + 'Preencha o campo email<br>'
+        }
+
+        let senha = this['senha'].value
+        if(!senha){
+            msgFinal = msgFinal + 'Preencha o campo Senha<br>'
+        }
+
+//        let sexo = this[sexo].value
+//        if(!sexo){
+//            msgFinal = msgFinal + 'Preencha o campo sexo<br>'
+//        }
+  
+        let confirmarsenha = this['confirmarsenha'].value
+        if (senha !== confirmarsenha){
+            msgFinal = msgFinal + 'Confirmação de senha não confere<br>'
+        } 
+
+    mensagem.innerHTML = msgFinal
+
+    if (msgFinal === ''){
+        formulario.submit()
+    }
+    
+    }
+
+    formulario.limpar.onclick = function (event) {
+        formulario.nome.value = ''
+        formulario.email.value = ''
+        formulario.senha.value = ''
+        formulario.confirmarsenha.value = ''
+        formulario.noticias.checked = false
+//VEEEER
+        formulario.sexo.m.checked= false
+
+
+}
+</script>
+</body>
+</html>
