@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        aula6 js - json
+    </title>
+</head>
+<body>
+    <script>
+    //json exercicio 
+    //exercicio1
+    let respostadaAPI = '{"nome":"Ana"}'
+    let objetoexercicio1 = JSON.parse(respostadaAPI)        
+
+ //   console.log(objetoexercicio1.nome)
+
+    let objetoexercicio1String = JSON.stringify(objetoexercicio1)
+
+ //   console.log(objetoexercicio1String)       
+
+    //exercicio 2
+    let amigos = '{"3":["Ana","Luiza","Pedro"]}'
+    let amigosstring = JSON.parse(amigos)
+
+ //   console.log(amigosstring) 
+
+//exercicio 3
+//Gerar um objeto JSON contendo um array com 3 objetos. Cada objeto deve ter um número e
+//uma string. Em seguida, transformá-lo em string
+
+    let array = '{"propriedade":[{"pedra":1},{"papel":2},{"tesoura":3}]}'
+    console.log(array)
+
+    let objJSON = JSON.parse(array)
+    console.log(objJSON.propriedade[0].pedra)
+    console.log(objJSON.propriedade[1].papel)
+
+    let objJSONString = JSON.stringify(objJSON)
+    console.log(objJSONString)
+
+    </script>
+</body>
+</html>

@@ -20,13 +20,13 @@
     <div>
     Sexo:
     <label>
-    <input type="radio" name="sexo" value='m' id='m'placeholder="sexo" /> Masculino
+    <input type="radio" name="sexo" value='m'/> Masculino
     </label>
     <label>
-    <input type="radio" name="sexo" value='f' id='f' placeholder="sexo" />Feminino
+    <input type="radio" name="sexo" value='f'/>Feminino
     </label>
     <label>
-     <input type="radio" name="sexo" value='a' id='a' placeholder="sexo" />Outro
+     <input type="radio" name="sexo" value='a'  />Outro
      </label>
     </div>
 
@@ -93,10 +93,11 @@
         formulario.senha.value = ''
         formulario.confirmarsenha.value = ''
         formulario.noticias.checked = false
-//VEEEER
-        formulario.sexo.m.checked= false
-
-
+//VEEEER    
+        let sexo = this[sexo].value
+        formulario.sexo.selected = false 
+//        formulario.sexo.f.checked=false 
+//        formulario.sexo.a.checked=false 
 }
 </script>
 </body>
