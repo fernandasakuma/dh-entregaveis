@@ -12,6 +12,7 @@ let paragrafo = document.createElement('div')
 document.body.appendChild(paragrafo)
 let contador = '0'
 
+
 button.addEventListener("click", function(){
     alert("Olá mundo")
 
