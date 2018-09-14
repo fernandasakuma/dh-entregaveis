@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Botao from './Botao';
+import Input from './Input';
 
 class App extends Component {
 constructor(){
@@ -26,6 +28,8 @@ armazena(event){
       this.state.item
 
     ];
+    console.log(arr);
+
     this.setState({
       lista:arr
     })
@@ -37,10 +41,8 @@ armazena(event){
     return (
       <div>
         <h1>To do List</h1>
-        <input type="text" name='novoitem'onChange ={this.armazena.bind(this)} />
-        <button onClick={this.adicionarItem.bind(this)}>
-        adicionar
-        </button>
+        <Input tipo='text' onChange={this.armazena.bind(this)} />   
+        <Botao title='adicionar' enviar={this.adicionarItem.bind(this)} />
         <ul>
         {
           this.state.lista.map((item) => 
